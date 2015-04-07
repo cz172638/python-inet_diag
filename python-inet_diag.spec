@@ -3,13 +3,14 @@
 
 Summary: Ethernet settings python bindings
 Name: python-inet_diag
-Version: 0.1
+Version: 0.2
 Release: 1%{?dist}
 URL: https://rt.wiki.kernel.org/index.php/Tuna
 Source: https://www.kernel.org/pub/software/libs/python/%{name}/%{name}-%{version}.tar.bz2
 License: GPLv2
 Group: System Environment/Libraries
 BuildRequires: python-devel
+Requires: python-linux-procfs
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %description
@@ -43,5 +44,13 @@ rm -rf %{buildroot}
 %endif
 
 %changelog
+* Tue Apr  7 2015 * Jiri Kastner <jkastner@redhat.com - 0.2-1
+- fixed some memory leaks and problems on arm platform (james hulka)
+- incorporated some socketstat functionality
+
+* Tue Apr  7 2015 * Jiri Kastner <jkastner@redhat.com> - 0.1-2
+- Added package requirement for python-linux-procfs
+- fixed pss usage typo
+
 * Wed May 13 2009 * Arnaldo Carvalho de Melo <acme@redhat.com> - 0.1-1
 - Initial package

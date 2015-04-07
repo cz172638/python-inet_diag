@@ -192,8 +192,8 @@ def print_sockets(states, families, socktype, show_options = False, show_mem = F
 		print
 
 def usage():
-	print '''Usage: ss [ OPTIONS ]
-       ss [ OPTIONS ] [ FILTER ]
+	print '''Usage: pss [ OPTIONS ]
+       pss [ OPTIONS ] [ FILTER ]
    -h, --help		this message
    -V, --version	output version information
    -n, --numeric	don't resolve service names
